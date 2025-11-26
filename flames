@@ -1,0 +1,87 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+void main()
+{
+    int x, y,z,i,j,r,s,g,h;
+    int a,b;
+    char name1[22],name2[22],a[11]= {' ',clrscr()};
+    printf("Enter the name 1:");
+    scanf("%s", name1);
+    printf("Enter the name 2:");
+    scanf("%s", name2);
+    x=strlen(name1);
+    y=strlen(name2);
+    z=x+y;
+    for(int i=0; i<strlen(name1); i++)
+    {
+      
+    for(int j=0; j<strlen(name2); j++)
+       {
+           if(name1[i]==name2[j])
+           {
+               name1[i]=name2[j]=' ';
+               z=z-2;
+               break;
+           }
+       }
+
+    }
+    for(int r=6; r>1; r--)
+    {
+        s=z%r;
+        if(s==0)
+        {
+           s=r;
+           i=1;
+        }
+        else
+        {
+            a[s]='/o';
+            i=s+1;
+        }
+        j=1;
+        while(1)
+        {
+            if(i==s)
+            {
+                break;
+            }
+            b[j]=a[i];
+            if(i==r)
+            {
+                i=0;
+            }
+            i++;
+            j++;
+            
+        }
+        for(int i=1; i<=r; i++)
+        {
+            a[i]=b[i];
+        }
+    }
+    printf("\nRelationship status:");
+    switch (a[1])
+    {
+        case 'f':
+        printf("FRIENDSHIP");
+        break;
+        case 'l':
+        printf("LOVE");
+        break;
+        case 'a':
+        printf("AFFECTION");
+        case 'm':
+        printf("MARRIAGE");
+        case 'e':
+        printf("ENMITY");
+        case 's':
+        printf("SISTER");
+        
+    }
+    grtch();
+    
+   
+}
